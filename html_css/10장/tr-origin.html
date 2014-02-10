@@ -1,0 +1,72 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Transform Origin</title>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<style>
+img{border:1px solid black;}
+
+#wrapper div{
+	float:left;
+	margin:10px;
+}
+.ex div{
+	width:152px;
+	height:180px;
+	background-color:rgba(0,0,255,0.3);
+	perspective:200px;
+	-webkit-perspective:200px;
+	-moz-perspective:200px;
+	transform-style:preserve-3d;
+	-webkit-transform-style:preserve-3d;
+	-moz-transfotm-style:preserve-3d;
+}
+.ex img{
+	transform:rotateZ(10deg);
+	-webkit-transform:rotateZ(10deg);
+	-moz-transform:rotateZ(10deg);
+}
+.ltop img{
+	transform-origin:left top;
+	-webkit-transform-origin:left top;
+	-moz-transform-origin:left top;
+}
+.rtop img{
+	transform-origin:right top;
+	-webkit-transform-origin:right top;
+	-moz-transform-origin:right top;
+}
+.lbt img{
+	transform-origin:left bottom;
+	-webkit-transform-origin:left bottom;
+	-moz-transform-origin:left bottom;
+}
+.rbt img{
+	transform-origin:right bottom;
+	-webkit-transform-origin:right bottom;
+	-moz-transform-origin:right bottom;
+}
+
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+	<div class="ex">
+		<div class="ltop"><img src="sunset.jpg"></div>
+	</div>
+	<div class="ex">
+		<div class="rtop"><img src="sunset.jpg"></div>
+	</div>
+	<div class="ex">		
+		<div class="lbt"><img src="sunset.jpg"></div>
+	</div>
+	<div class="ex">	
+		<div class="rbt"><img src="sunset.jpg"></div>	
+	</div>
+</div>
+</body>
+</html>

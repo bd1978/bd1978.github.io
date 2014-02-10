@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Transition timing function</title>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<style>
+#ex div{
+	width:100px;
+	height:100px;
+	background-color:red;
+	border-radius:0px;
+	transition-property:background-color, border-radius;
+    -webkit-transition-property:background-color, border-radius;
+    -moz-transtion-property:background-color, border-radius;
+}
+#ex:hover div{
+	background-color:blue;
+	border-radius:50px;
+}
+</style>
+</head>
+
+<body>
+<p> 도형 위로 마우스 포인터를 올려보세요</p>
+<div id="ex">
+	<div></div>
+</div>
+</body>
+</html>

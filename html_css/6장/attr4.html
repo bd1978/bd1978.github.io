@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>요안도라</title>
+<style>
+  ul li{
+  font-size:16px;
+  line-height:25px;
+  list-style:none;
+  }
+
+  h4[title ^= "남자"] {                        /* title 속성 값이 "남자"로 시작하는 h4 요소 */
+  background :url(man.png) no-repeat;          /* man.png를 배경 이미지로 */
+  padding: 10px 30px;                          /* h4 요소의 패딩(안여백) 상하 10px 좌우 30px */
+  }
+
+  h4[title ^= "여자"] {                         /* title 속성 값이 "남자"로 시작하는 h4 요소 */
+  background :url(woman.png) no-repeat;         /* man.png를 배경 이미지로 */
+  padding: 10px 30px;                           /* h4 요소의 패딩(안여백) 상하 10px 좌우 30px */
+  }
+
+</style>
+</head>
+
+<body>
+  <section>
+  <header><h1>객실 소개</h1></header>
+  <h3> 객실 안내</h3>
+   <h4 title="남자 도미토리">남자 도미토리</h4>
+    	<ul>
+            <li>공동 취사실 및 욕실(화장실) 사용</li>
+            <li>1인 20,000원(비수기), 25,000원(성수기)</li>             
+        </ul>
+    <h4 title="여자 도미토리">여자 도미토리</h4>
+    	<ul>
+            <li>취사 기구 완비, 실내 욕실(화장실)</li>
+            <li>1인 30,000원(비수기), 40,000원(성수기)</li>
+        </ul>
+    <h4 title="펜션">펜션</h4>
+    	<ul>
+            <li>취사 기구 완비, 실내 욕실(화장실)</li>
+            <li>1박 100,000원(비수기), 150,000원(성수기)</li>
+        </ul>		
+</section>
+</body>
+</html>

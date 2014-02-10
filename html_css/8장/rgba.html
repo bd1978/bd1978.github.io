@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>투명도와 함께 색상 표현하기</title>
+<style>
+  div {
+    width:300px;
+    height:50px;
+  }
+  p{
+    font-weight:bold;
+    color:white;
+  }
+  .box1 { background:rgb(0,0,255);}
+  .box2 { background:rgba(0,0,255,0.5);}
+  .box3 { background:hsl(360,100%,50%);}
+  .box4 { background:hsla(360,100%,50%,0.5);}
+</style>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+  <h1>색상 표현하기</h1>
+  <h3>rgb와rgba</h3>
+  <div class="box1">
+    <p>rgb(0,0,255);</p>
+  </div>
+  <div class="box2">
+    <p>rgba(0,0,255,0.5)</p>
+  </div>
+  <h3>hsl과 hsla</h3>
+  <div class="box3">
+    <p>hsl(360,100%,50%);</p>
+  </div>  
+  <div class="box4">
+    <p>hsla(360,100%,50%,0.5);</p>
+  </div>  
+</body>
+</html>

@@ -1,0 +1,75 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Animation</title>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<style>
+    #myball {
+        position:relative;
+    	width:100px;
+    	height:100px;
+        border-radius:50px;
+        border:2px solid black;       
+        background:url(f1.png) no-repeat center center padding-box; 
+        animation-duration:3s;
+        animation-name:myani;
+        animation-direction:alternate;
+        animation-iteration-count:infinite;
+        -webkit-animation-duration:3s;
+        -webkit-animation-name:myani;
+        -webkit-animation-direction:alternate;
+        -webkit-animation-iteration-count:infinite;
+        -moz-animation-duration:3s;
+        -moz-animation-name:myani;
+        -moz-animation-direction:alternate;
+        -moz-animation-iteration-count:infinite;
+    }
+
+
+    @keyframes myani {
+        0%{
+            left: 10px;
+        }
+        40% {
+            top:50px;  
+            background:url(f2.png) no-repeat center center;
+        }
+        100% {
+            left:500px;
+        }
+    }
+
+    @-webkit-keyframes myani {
+        0% {
+            left: 10px;
+        }
+        40% {
+            top:50px;  
+            background:url(f2.png) no-repeat center center;
+        }
+        100% {
+            left:500px;
+        }
+    }
+    @-moz-keyframes myani {
+        0% {
+            left: 10px;
+        }
+        40% {
+            top:50px;  
+            background:url(f2.png) no-repeat center center;
+        }
+        100% {
+            left:500px;
+        }
+    }
+</style>
+</head>
+
+<body>
+<div id="myball"></div>
+</body>
+</html>

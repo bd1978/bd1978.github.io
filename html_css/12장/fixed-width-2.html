@@ -1,0 +1,80 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>너비가 고정된 레이아웃</title>
+	<style>
+	body{
+		background:#ccc;
+	}
+	#wrapper{
+		width:96%;
+		margin:0 auto;
+		background-color:white;
+	}
+	header{
+		width:100%;
+		height:120px;
+		background-color:#f5f4e0;		
+		background:url(back.png) no-repeat left center;		
+		border-bottom:1px solid black;					
+	}
+	header h1{
+		padding-top:30px;
+		padding-left:120px;
+	}	
+	.header1{
+		font-size:40px;
+		font-family: "Comic Sans MS";
+	}
+	article {
+		float:left;
+		width:62.5%;
+		padding:20px;
+	}
+	aside {
+		float:right;
+		width:31.25%;
+		padding:8px;
+		background-color:#d7e4e0;
+		border-left:1px dotted black;
+	}
+	footer{
+		clear:both;
+		background:#677b75;
+		padding:10px;
+		text-align:center;
+	}
+	</style>
+</head>
+<body>
+<div id="wrapper">
+	<header> 
+		<h1 class="header1">Fixed-width Layout</h1>
+	</header>
+	<section>
+		<article>
+		   <p>실제 내용이 표시됩니다</p>
+		   <p>실제 내용이 표시됩니다
+		   </p>
+		   <p>실제 내용이 표시됩니다</p>		   
+		   <p>실제 내용이 표시됩니다</p>
+		   <p>실제 내용이 표시됩니다</p>
+		</article>
+		<aside>
+			<p> 사이드바의 내용이 표시됩니다</p>
+			<p> 사이드바의 내용이 표시됩니다</p>
+			<p> 사이드바의 내용이 표시됩니다</p>
+			<p> 사이드바의 내용이 표시됩니다</p>
+			<p> 사이드바의 내용이 표시됩니다</p>
+			<p> 사이드바의 내용이 표시됩니다</p>			
+		</aside>
+	</section>
+	<footer>
+		<address>제작자 연락처 정보</address>
+		<p> 저작권 정보 및 주소  </p>
+	</footer>
+</div>	
+</body>
+</html>

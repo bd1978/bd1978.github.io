@@ -1,0 +1,92 @@
+﻿<style>
+body{
+	font-family:"맑은고딕", "돋움", "굴림";
+}
+header {
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #069;
+	padding: 10px;
+	overflow: hidden;
+}
+header h1{
+	width:40%;
+	float:left;	
+	color:#ffffff;
+}
+
+header nav {
+	width:60%;
+	float:right;	
+}
+
+nav ul{
+	list-style-type:none;	
+	margin-top:20px;
+}
+
+nav ul li{
+	display: inline;
+	float: left;
+	margin: 15px;
+}
+nav ul li a{
+	color:white;
+	text-decoration:none;	
+}
+p, dt, dd {
+	font-family:"돋움", "굴림";
+	font-size: 14px;
+	line-height: 25px;
+}
+dt {
+	font-weight:bold;
+}
+h1{
+	font-size:40px;	
+}
+section{
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	border:5px solid #333;
+	padding:5px;
+	overflow:hidden;
+}
+
+article{
+	width:30%;
+	height:auto;
+	float:left;
+	margin:5px;
+	padding:5px;
+	border:1px dotted #333;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+
+article h3{
+	background:url(bg.png) no-repeat left center;
+	padding-left:30px;
+}
+
+aside{
+	clear:both;
+	height:auto;
+	padding:10px;
+	background-color:#99cc33;
+}
+footer{
+	clear:both;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;	
+	margin-top:0;
+	padding:10px;
+	background-color:#333;
+	color:white;	
+	text-align:center;
+}
+</style>	

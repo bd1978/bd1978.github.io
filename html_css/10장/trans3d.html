@@ -1,0 +1,69 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Translate3D</title>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<style>
+  img{border:1px solid black;}
+  div#original {
+  margin-bottom:50px;
+  }
+  div#div1{
+  float:left;
+  margin:10px;
+  width:152px;
+  height:192px;
+  background-color:rgba(0,0,255,0.3);
+  perspective:200px;
+  -webkit-perspective:200px;
+  -moz-perspective:200px;
+  transform-style:preserve-3d;
+  -webkit-transform-style:preserve-3d;
+  -moz-transfotm-style:preserve-3d;
+  }
+  .translatex img{
+  transform:translateX(-10px);
+  -webkit-transform:translateX(-10px);
+  -moz-transform:translateX(-10px);
+  }
+  .translatey img{
+  transform:translateY(20px);
+  -webkit-transform:translateY(20px);
+  -moz-transform:translateY(20px);
+  }
+  .translatez img{
+  transform:translateZ(40px);
+  -webkit-transform:translateZ(40px);
+  -moz-transform:translateZ(40px);
+  }
+  .translatexyz img{
+  transform:translate3d(10px, 20px, 10px);
+  -webkit-transform:translate3d(10px, 20px, 10px);
+  -moz-transform:translate3d(10px, 20px, 10px);
+  }
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+  <div id="original">
+    <h4>원본 이미지</h4>
+    <img src="woman.png">
+  </div>
+  <div id="div1">
+		<div class="translatex"><img src="woman.png"></div>
+	</div>
+	<div id="div1">
+		<div class="translatey"><img src="woman.png"></div>
+	</div>
+	<div id="div1">
+		<div class="translatez"><img src="woman.png"></div>
+	</div>
+	<div id="div1">	
+		<div class="translatexyz"><img src="woman.png"></div>	
+	</div>
+</body>
+</html>

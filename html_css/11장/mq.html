@@ -1,0 +1,34 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>미디어쿼리</title>
+  <style>
+  body{
+		background-color:gray;
+	}
+	#logo img{
+		width:100%;
+		margin-top:150px;
+	}
+	
+	@media screen and (max-width: 960px) {
+		body { background-color:green; }
+	}
+
+	@media screen and (max-width:500px) {
+		body {background-color:yellow; }
+	}
+
+	@media screen and (max-width:320px) {
+		body {background-color:orange;}
+	}
+  </style>
+</head>
+<body>
+  <div id="logo">
+		<img src="logo.png">
+	</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+     <title> 웹 폼</title>
+     <style>
+       label {
+       line-height:25px;
+       }
+
+       input#butt {
+       vertical-align:bottom;
+       }
+     </style>
+  </head>
+  <body>
+    <form>
+        <label>
+          아이디<input type="text" id="user_id" size="10" autofocus="">
+        </label>
+        <label>
+          비밀번호<input type="password" id="user_pw" size="10">
+        </label>
+        <p></p><input type="submit" value="로그인"></input></p>
+      <p><input type="button" value="로그인" onclick="login.php"></p>
+    </form>
+  </body>
+</html>

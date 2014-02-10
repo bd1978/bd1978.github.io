@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>참고 사이트</title>
+<style>
+  a {
+   text-decoration:none;
+   color:black;
+  }
+  ul li{
+  font-size:16px;
+  line-height:25px;
+  list-style:none;
+  }
+  li[title *= "2011"] {        /* title 속성 값에 '2011'이란 문자열이 있을 경우 */
+    font-style:italic;  /* 글자는 이탤릭체로 */
+    font-weight:700;    /* 글자 조금 굵게 */
+  }
+  a[hreflang |= "en"] {        /* hreflang 속성이 en일 경우 */
+      background:url(en.jpg) center right no-repeat;    /* 오른쪽에 en.jpg 표시 */
+      padding-right:30px;       /* 배경 그림과 내용 사이의 여백*/
+    }
+</style>
+</head>
+
+<body>
+  <section id="container">
+  <header><h1>CSS 참고 사이트</h1></header>
+   <ul>
+     <li title="last update:2011-11"><a href="#" hreflang="en">사이트1</a></li>
+     <li title="last update:2010-01"><a href="#" hreflang="en">사이트2</a></li>
+     <li title="last update:2010-08"><a href="#" hreflang="ko">사이트3</a></li>
+     <li title="last update:2011-01"><a href="#" hreflang="fr">사이트4</a></li>
+  </ul>
+
+</section>
+</body>
+</html>

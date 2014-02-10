@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>애완견 돌보기</title>	
+	<style>
+		#wrapper{
+			width: 96%;
+			margin:0 auto;
+		}
+		video{
+			max-width:100%;
+		}
+		header{
+			background-color:#069;
+			padding:10px;
+			overflow:hidden;
+		}
+		header h1{
+			width:40%;
+			float:left;
+			font-size:2.5em;
+			font-family:"돋움", "굴림";
+			color:#fff;			
+		}
+		header nav{
+			width:60%;
+			float:right;
+		}
+		nav ul {
+			list-style-type:none;
+			margin-top:20px;
+		}
+		nav ul li{
+			display:inline;
+			float:left;
+			margin-top:20px ;
+			margin-right:20px;
+		}
+		nav ul li a, nav ul li a:visited{
+			font-family:"돋움", "굴림";
+			font-size:16px;
+			color:white;
+			text-decoration:none;
+		}
+		section {
+			border:5px solid #333;
+			padding:30px;
+		}	
+		footer{
+			padding:10px;
+			background-color:#333;
+			color:white;
+			text-align:center;
+		}		
+	</style>	
+</head>
+<body>
+<header>
+<h1>애완견 종류</h1>
+  <nav>
+    <ul>
+      <li><a href="#">애완견 종류</a></li>
+      <li><a href="#">입양하기</a></li>
+      <li><a href="#">건강돌보기</a></li>
+      <li><a href="#">더불어살기</a></li>
+    </ul>
+  </nav>
+</header>
+<section>
+	<article>
+		<h2>귀염둥이들의 일상</h2>
+		<video width="600" height="450" controls id="puppy">
+			<source src="mypuppy.ogv">
+			<source src="mypuppy.mp4">
+			<source src="mypuppy.webm">			
+		</video>
+	</article>
+ </section>
+ <footer>
+	<p>Copyright 2012 funnycom</p>
+</footer>
+</body>
+</html>

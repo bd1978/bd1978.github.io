@@ -1,0 +1,79 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+     <title> 웹 폼</title>
+     <style>
+	 body {
+		background-color:#fff; 
+	 }
+	 form fieldset{
+		margin-bottom:25px; 
+	 }	 
+	 form legend{
+		font-size:15px;
+		font-weight:600; 
+	 }
+	 form label.reg {
+		font-size:14px;
+		color:#390;
+		font-weight:bold;
+		width:110px;
+		float:left;
+		text-align:right;
+		margin-right:10px;
+	 }
+	 form ul li{
+		list-style:none; 
+		margin: 15px 0;	
+		font-size:14px;	
+	 }
+ 
+
+	 #member, #stuffs {
+		width:50px; 
+	 }
+	 
+	 #pre {
+		margin-left:15px;
+	 }
+	 </style>
+  </head>
+  <body>
+	<form>
+    <fieldset id="register">
+    <legend>수강 과목을 선택하세요 <small>(1과목 선택 가능)</small></legend>
+    	<ul>
+        	<li>
+            	<label class="reg" for="color">선호색상</label>
+                <input type="color" id="color">
+            </li>        
+	        <li>
+            	신청 과목<small>(회화)</small>
+            <label><input type="radio" name="spk" id="spk" value="low" checked="">영어 회화(초급)</label>
+            <label><input type="radio" name="spk" id="spk" value="middle">영어 회화(중급)</label>
+            <label><input type="radio" name="spk" id="spk" value="high">영어 회화(고급)</label>
+            </li>
+	        <li>
+            	신청 과목<small>(자격)</small>
+            <label><input type="radio" name="spk" id="cert" value="toeic">TOEIC</label>
+            <label><input type="radio" name="spk" id="cert" value="toefl">TOEFL</label>
+            <label><input type="radio" name="spk" id="cert" value="opic">OPIC</label>       
+          </li>                    
+        </ul>
+     </fieldset>
+     <fieldset>
+      <legend for="pre"> 관심분야는? <small>(다수 선택 가능)</small></legend>
+       	<ul>
+	       	<li>
+                <input type="checkbox" name="pre" id="pre"  value="grammar">문법
+                <input type="checkbox" name="pre" id="pre"  value="voca">어휘
+                <input type="checkbox" name="pre" id="pre"  value="grammar">회화
+                <input type="checkbox" name="pre" id="pre"  value="listening">리스닝
+                <input type="checkbox" name="pre" id="pre"  value="news">뉴스 청취
+                <input type="checkbox" name="pre" id="pre"  value="reading">독해                
+            </li>
+        </ul>
+     </fieldset>
+  </form>
+  </body>
+</html>

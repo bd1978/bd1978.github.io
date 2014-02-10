@@ -1,0 +1,45 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+     <title> 웹 폼</title>
+     <style>
+	 body {
+		background-color:#fff; 
+	 }
+	 form fieldset{
+		margin-bottom:25px; 
+	 }	 
+	 form legend{
+		font-size:15px;
+		font-weight:600; 
+	 }
+	 form ul li{
+		list-style:none; 
+		margin: 15px 0;	
+		font-size:14px;	
+	 }
+	 
+	 #pre {
+		margin-left:15px;
+	 }
+	 </style>
+  </head>
+  <body>
+	<form>
+    <fieldset id="register">
+    <legend>수강 과목을 선택하세요 <small>(1과목 선택 가능)</small></legend>
+    	<ul>  
+	        <li>
+                <label><input type="radio" name="spk" id="spk" value="low" checked>영어 회화(초급)</label>
+			</li>
+			<li>
+                <label><input type="radio" name="spk" id="spk" value="middle">영어 회화(중급)</label>
+			</li>
+			<li>
+                <label><input type="radio" name="spk" id="spk" value="high">영어 회화(고급)</label>
+            </li>        
+		</ul>
+     </fieldset>
+  </form>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Transform style</title>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<style>
+div {
+	width:200px;
+	height:200px;
+}
+#div1{
+	position:absolute;
+	border:1px solid black;
+	background-color:blue;
+}
+#div2{
+	position:absolute;
+	border:1px solid black;
+	background-color:yellow;
+	transform:translate3d(10px, 20px, 20px);
+	-webkit-transform:translate3d(10px, 20px, 20px);
+	-moz-transform:translate3d(10px, 20px, 20px);	
+}
+#div3{
+	position:absolute;
+	border:1px solid red;
+	background-color:orange;
+	transform:translateX(250px);
+	-webkit-transform:translateX(250px);
+	-moz-transform:translateX(250px);	
+}
+</style>
+</head>
+
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+</body>
+</html>

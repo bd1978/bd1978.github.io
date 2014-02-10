@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>요안도라</title>
+<style>
+div {
+	width:200px;
+	height:200px;
+	border:1px solid black;
+	margin-bottom:10px;
+}	
+#div1{
+	background:-webkit-radial-gradient(30% 40%, circle closest-side, white, green );
+}
+#div2{
+	background:-webkit-radial-gradient(30% 40%, circle closest-corner, white, green);
+}
+#div3{
+	background:-webkit-radial-gradient(30% 40%, circle farthest-side, white, green);
+}
+#div4{
+	background:-webkit-radial-gradient(30% 40%, circle farthest-corner, white, green);
+}
+</style>
+</head>
+
+<body>
+<h1> 원형 그라데이션</h1>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>	
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+     <title> 웹 폼</title>
+     <style>
+	 label {
+		font-size:14px;
+		line-height:25px; 
+	 }
+	 label em{
+		color:red;
+		font-weight:800; 
+	 }
+	 </style>
+  </head>
+  <body>
+	<form>
+    <fieldset class="login">
+    	<label>아이디: <input type="text" id="user_id" size="10"></label>
+        <label>비밀번호: <input type="password" id="user_pw" size="10"></label>
+        <input type="submit" value="로그인">
+    </fieldset>
+    <fieldset class="register">
+    	<ul>
+        	<li><label>아이디 : <em>*</em><input type="text" id="new_id" size="10"></label></li>
+			<li><label>비밀번호 : <em>*</em><input type="password" id="new_pw1"></label>
+		    </li><li><label>비밀번호 확인 : <em>*</em><input type="password" id="new_pw2"></label></li>
+    		<li><label>이름 : <em>*</em><input type="text" id="user_name" size="10"></label></li>
+        	<li><label>메일 주소 : <em>*</em><input type="email" id="user_mail" size="10"></label></li>
+         	<li><label>연락처 : <input type="tel" id="user_tel"></label></li>
+        </ul>
+    </fieldset>
+  </form>
+  </body>
+</html>

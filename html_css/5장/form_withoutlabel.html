@@ -1,0 +1,54 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+     <title> 웹 폼</title>
+     <style>
+	 body {
+		background-color:#fff; 
+	 }
+	 form fieldset{
+		margin-bottom:25px; 
+	 }	 
+	 form legend{
+		font-size:15px;
+		font-weight:600; 
+	 }
+	 form ul li{
+		list-style:none; 
+		margin: 15px 0;	
+		font-size:14px;	
+	 }
+	 
+	 #pre {
+		margin-left:15px;
+	 }
+	 </style>
+  </head>
+  <body>
+	<form>
+     <fieldset>
+      <legend for="pre"> 관심분야는? <small>(다수 선택 가능)</small></legend>
+       	<ul>
+	       	<li>
+			    	<input type="checkbox" name="pre" id="pre"  value="grammar">문법
+			    </li>
+			    <li>
+            <input type="checkbox" name="pre" id="pre"  value="voca">어휘
+			    </li>
+			    <li>
+            <input type="checkbox" name="pre" id="pre"  value="grammar">회화
+			    </li>
+			    <li>
+            <input type="checkbox" name="pre" id="pre"  value="listening">리스닝
+			    </li>
+		    	<li>
+            <input type="checkbox" name="pre" id="pre"  value="news">뉴스 청취
+		    	</li>
+		    	<li>
+           <input type="checkbox" name="pre" id="pre"  value="reading">독해                
+          </li>
+        </ul>	 
+	    </fieldset>
+  </form>
+  </body>
+</html>

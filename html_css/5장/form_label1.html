@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+     <title>회원 가입</title>
+     <style>
+	 	form fieldset {
+			margin-bottom:10px;
+		}
+		
+		form legend{
+			font-size:15px;
+			color:#006666;
+			font-weight:600;	
+		}
+	
+		form ul li{
+			list-style:none;
+			font-size:12px;
+			margin : 10px 0;	
+		}
+	 </style>
+  </head>
+  <body>
+	<form>
+      <fieldset>
+      	<legend>로그인 정보</legend> 
+        <ul>
+			    <li>
+            <label>아이디(6자 이상)<input type="text" id="id"></label>
+          </li>
+        	<li>
+           	<label>비밀번호<input type="password" id="pw1"></label>
+          </li>
+        	<li>
+        	 	<label>비밀번호(확인)<input type="password" id="pw2"></label>
+          </li>  
+        </ul>
+      </fieldset>
+      <fieldset>
+      	<legend>개인 정보</legend>
+        <ul>
+	        <li><label>이름 <input type="text" id="name"></label></li>
+	        <li><label>이메일 주소 <input type="email" id="email"></label></li>
+		    <li>...</li>
+       </ul>
+      </fieldset>
+    </form>
+  </body>
+</html>

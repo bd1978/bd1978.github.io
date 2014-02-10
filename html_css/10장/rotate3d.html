@@ -1,0 +1,66 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Rotate3D</title>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<style>
+  img{border:1px solid black;}
+
+  #wrapper div{
+  float:left;
+  margin:10px;
+  }
+  .origin div{
+  width:152px;
+  height:192px;
+  background-color:rgba(0,0,255,0.3);
+  perspective:200px;
+  -webkit-perspective:200px;
+  -moz-perspective:200px;
+  transform-style:preserve-3d;
+  -webkit-transform-style:preserve-3d;
+  -moz-transfotm-style:preserve-3d;
+  }
+  .rotatex img{
+  transform:rotateX(45deg);
+  -webkit-transform:rotateX(45deg);
+  -moz-transform:rotateX(45deg);
+  }
+  .rotatey img{
+  transform:rotateY(45deg);
+  -webkit-transform:rotateY(45deg);
+  -moz-transform:rotateY(45deg);
+  }
+  .rotatez img{
+  transform:rotateZ(45deg);
+  -webkit-transform:rotateZ(45deg);
+  -moz-transform:rotateZ(45deg);
+  }
+  .rotatexyz img{
+  transform:rotate3d(2.5, 1.2, -1.5, 45deg);
+  -webkit-transform:rotate3d(2.5, 1.2, -1.5, 45deg);
+  -moz-transform:rotate3d(2.5, 1.2, -1.5, 45deg);
+  }
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+	<div class="origin">
+		<div class="rotatex"><img src="woman.png"></div>
+	</div>
+	<div class="origin">
+		<div class="rotatey"><img src="woman.png"></div>
+	</div>
+	<div class="origin">		
+		<div class="rotatez"><img src="woman.png"></div>
+	</div>
+	<div class="origin">	
+		<div class="rotatexyz"><img src="woman.png"></div>	
+	</div>
+</div>
+</body>
+</html>

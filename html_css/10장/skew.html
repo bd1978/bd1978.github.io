@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Skew</title>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<style>
+  img{border:1px solid black;}
+  div#original {
+  margin-bottom:50px;
+  }
+  div#div1{
+  float:left;
+  margin:30px;
+  width:152px;
+  height:192px;
+  background-color:rgba(0,0,255,0.3);
+  perspective:200px;
+  -webkit-perspective:200px;
+  -moz-perspective:200px;
+  transform-style:preserve-3d;
+  -webkit-transform-style:preserve-3d;
+  -moz-transfotm-style:preserve-3d;
+  }
+  .skewx img{
+  transform:skewX(30deg);
+  -webkit-transform:skewX(30deg);
+  -moz-transform:skewX(30deg);
+  }
+  .skewy img{
+  transform:skewY(15deg);
+  -webkit-transform:skewY(15deg);
+  -moz-transform:skewY(15deg);
+  }
+  .skew img{
+  transform:skew(-25deg, -15deg);
+  -webkit-transform:skew(-25deg, -15deg);
+  -moz-transform:skew(-25deg, -15deg);
+  }
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+  <div id="original">
+    <h4>원본 이미지</h4>
+    <img src="woman.png">
+  </div>
+  <div id="div1">
+		<div class="skewx"><img src="woman.png"></div>
+	</div>
+	<div id="div1">
+		<div class="skewy"><img src="woman.png"></div>
+	</div>
+	<div id="div1">
+		<div class="skew"><img src="woman.png"></div>
+	</div>
+</body>
+</html>

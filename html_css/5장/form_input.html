@@ -1,0 +1,29 @@
+﻿<!doctype html>
+<html>
+  <head>
+	 <meta charset="utf-8">
+	 <title>폼 만들기</title>
+     <style>
+       ul {
+       list-style-type:none;
+       }
+       
+       ul li{
+        margin-bottom:20px;
+       }
+     </style>
+  </head>
+  <body>
+	<form>
+    <h2>사용자 정보</h2>
+    <ul>
+      <li><label>이름 : <input type="text"><label></li>
+      <li><label>메일 주소 : <input type="email"></label></li>
+	  <li>소식지 수신 
+		  <label><input type="radio" value="yes" name="letter">수신</label>
+		  <label><input type="radio" value="no" name="letter">수신 안함</label></li>
+    <li><input type="submit" value="가입하기"></li>
+    </ul>
+	</form>
+  </body>
+</html>

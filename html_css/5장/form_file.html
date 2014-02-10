@@ -1,0 +1,56 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+     <title> 웹 폼</title>
+     <style>
+	 body {
+		background-color:#fff; 
+	 }
+	 form fieldset{
+		margin-bottom:25px; 
+		width:600px;
+	 }
+	 form legend{
+		font-size:15px;
+		font-weight:600; 
+	 }
+	 form label.reg {
+		font-size:14px;
+		width:110px;
+		color:#390;
+		font-weight:bold;		
+		float:left;
+		text-align:right;
+		margin-right:10px;
+	 }
+	 form label span{
+		width:1px;
+		height:1px;
+		line-height:0;
+		font-size:0; 
+	 }
+	 form ul li{
+		list-style:none; 
+		margin: 15px 0;	
+		font-size:14px;	
+	 }
+ 
+	fieldset#sending{
+		text-align:center;	
+	}
+	 #member, #stuffs {
+		width:50px; 
+	 }
+	 </style>
+  </head>
+  <body>
+	<form>
+      <fieldset id="upload">
+    <legend>학생증 사본 업로드</legend>
+    	<label for="student_cert"><span>학생증사본</span></label>
+        <input type="file" id="student_cert">
+    </fieldset>
+ 
+  </form>
+  </body>
+</html>
