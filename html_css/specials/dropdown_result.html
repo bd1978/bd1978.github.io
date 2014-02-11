@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>드롭다운 메뉴</title>
+<style>
+  #nav {  /* 메뉴 전체 영역에 대한 스타일 */
+  list-style-type: none; /* 불릿 기호 없앰 */
+  height: 45px; /* 내비게이션 높이 */
+  padding: 6px 7px;  /* 위아래 6px, 좌우 7px씩 안여백 */
+  margin: 0;  /* 바깥 여백 없음 */
+  background:#7d7d7d;  /* 내비게이션 전체 배경색 */
+  border-radius:1.5em;  /* 모서리 둥글게 */
+  }
+  #nav li { /* 메뉴 각 항목에 대한 스타일 */
+  float: left; /* 왼쪽부터 표시 */
+  position: relative; /* 순서대로 표시 */
+  margin:5px 10px;  /* 위아래 5px, 좌우 10px씩 바깥 여백 */
+  padding: 0; /* 안여백 없음 */
+  }
+  #nav li a { /* 메뉴 항목에서도 링크에 대한 스타일 */
+  display: block; /* 영역을 만듦 */
+  font-family:"굴림"; /* 글꼴 */
+  font-weight:600; /* 진하게 */
+  font-size:1em;	/* 글자크기 */
+  padding:10px 20px; /* 안여백 */
+  color: #e7e5e5; /* 링크 글자색 */
+  text-decoration: none; /* 밑줄 없앰 */
+  margin:0;  /* 바깥 여백 없음 */
+  border-radius:1.4em;   /* 링크의 모서리를 둥글게 */
+  text-shadow:0 1px 1px rgba(0,0,0,.3);  /* 텍스트 그림자 */
+  }
+  #nav li:hover > a{  /* 메뉴 항목 위로 마우스 올렸을 때 스타일 */
+  background:#ebebeb;  /* 배경색 */
+  color:#444;  /* 글자색 */
+  text-shadow: 0 1px 1px rgba(255,255,255,1);  /* 글자 그림자 */
+  border-radius:1.4em; /* 모서리 둥글게 */
+  -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.2);  /* 메뉴 항목에 그림자 */
+  -moz-box-shadow:0 1px 1px rgba(0,0,0,0.2);  /* 메뉴 항목에 그림자 */
+  }
+
+  #nav ul {  /* 서브 메뉴 영역에 대한 스타일 */
+  margin:0; /* 서브 메뉴 바깥 여백 없음 */
+  padding:0; /* 서브 메뉴 안여백 없음 */
+  list-style:none; /* 목록의 불릿 없앰 */
+  position: absolute; /* 고정 위치에 표시 */
+  left: 0; /* 부모 요소와 left 좌표 값은 같게 */
+  top:45px;  /* 부모 요소로부터 아래로 45px 밑에 표시 */
+  width: 150px; /* 서브 메뉴 너비 */
+  background:#ddd;  /* 서브 메뉴 배경색 */
+  border:1px solid #b4b4b4;  /* 서브 메뉴 테두리를 그림 */
+  border-radius:8px;  /* 모서리를 둥글게 처리 */
+  -webkit-box-shadow:0 1px 3px rgba(0,0,0,.3);  /* 서브 메뉴 전체에 그림자 효과 추가 */
+  -moz-box-shadow:0 1px 3px rgba(0,0,0,.3);
+  box-shadow:0 1px 3px rgba(0,0,0,.3);
+  opacity: 0; /* 투명하게 표시 - 결국 평소엔 안보임 */
+  }
+
+  #nav li:hover ul { /* 메인 메뉴 위로 마우스 오버했을 때 서브 메뉴 스타일 */
+  opacity: 1; /* 서브 메뉴 불투명해짐 -> 화면에 보임 */
+  }
+
+  #nav ul li { /* 서브 메뉴 각 항목의 스타일 */
+  float: none; /* 세로로 표시 */
+  margin:0;   /* 바깥 여백 없음 */
+  padding:0;  /* 안 여백 없음 */
+  }
+  #nav ul a {  /* 서브 메뉴 항목의 링크 스타일 */
+  font-weight:normal;  /* 진하기 보통으로 */
+  text-shadow:0 1px 0 #fff;  /* 글자 그림자 */
+  color:#333;   /* 글자색 */
+  }
+  #nav ul li:hover  a { /* 서브 메뉴 항목 위로 마우스 오버했을 때의 스타일 */
+  background:#0078ff;  /* 배경색 */
+  color:#fff;   /* 글자색 */
+  text-shadow:0 1px 1px rgba(0,0,0,0.1);  /* 글자 그림자 */
+  border-radius:0;  /* 모서리 둥글게 처리 안함 */
+  }
+  #nav ul li:first-child > a{  /* 서브 메뉴 첫번째 항목의 스타일 */
+  -webkit-border-top-left-radius:9px;   /* 왼쪽 윗부분 둥글게 */
+  -moz-border-radius-topleft:9x;   /* 오른쪽 윗부분 둥글게 */
+  -webkit-border-top-right-radius:9px;
+  -moz-border-radius-topright:9x;
+  }
+  #nav ul li:last-child > a {  /* 서브 메뉴 마지막 항목의 스타일 */
+  -webkit-border-bottom-left-radius:9px;   /* 왼쪽 아랫부분 둥글게 */
+  -moz-border-radius-bottomleft:9x;   /* 오른쪽 아랫부분 둥글게 */
+  -webkit-border-bottom-right-radius:9px;
+  -moz-border-radius-bottomright:9x;
+  }
+</style>
+</head>
+
+<body>
+<ul id="nav">
+	<li><a href="#"> 처음으로 </a></li>
+  <li><a href="#"> 요안도라 안내 </a>
+    <ul>
+      <li><a href="#">소개합니다.</a></li>
+      <li><a href="#">오시는 길</a></li>      
+    </ul>
+  </li>
+	<li><a href="#"> 이용 방법</a>
+    	<ul>
+       	  <li><a href="#"> 객실 둘러보기</a></li>
+          <li><a href="#"> 요금 안내 </a></li>
+          <li><a href="#"> 예약 방법 </a></li>  
+          <li><a href="#"> 예약 게시판</a></li>        	
+        </ul>
+    </li>
+	<li><a href="#"> 게시판 </a>
+    	<ul>
+         	<li><a href="#"> 공지사항 </a></li>
+            <li><a href="#"> 묻고 답하고</a></li>      	
+        </ul> 
+    </li>  
+	<li><a href="#"> 프로필</a></li>            
+</ul>
+
+</body>
+</html>

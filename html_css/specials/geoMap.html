@@ -1,0 +1,43 @@
+﻿
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geolocation</title>    
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<style>
+		label {display:block;}
+	</style>
+  </head>
+  <body>
+		
+		<label for="lat">위도: 
+			<input type="text" id="lat" name="lat">
+		</label>
+    
+		<label for="lng">경도:
+			<input type="text" id="lng" name="lng">
+		</label>
+		
+
+</body>
+<script>  
+	if(navigator.geolocation) {	
+		navigator.geolocation.getCurrentPosition(showPosition,errorPosition);  		
+	}
+	else {
+		alert("이 브라우저에서는 지오로케이션 서비스를 사용할 수 없습니다");
+	}
+
+	function showPosition(position)  {
+	
+
+
+	}
+  
+	function errorPosition(error)
+	{
+		alert(error.message);
+	}	      
+</script>
+</html>

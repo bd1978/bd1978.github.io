@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title> CSS로 회전 사진 만들기</title>
+<style>
+  body {
+  background:#222;
+  }
+  img {
+    margin:100px;
+  }
+  .whiteborder {
+  border:10px solid white;
+  box-shadow:5px 5px 5px black;
+  }
+  #scene {
+  -webkit-transition: all 0.5s ease;   /* 0.5초 동안 트랜지션 실행 */
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  }
+  #scene:hover  {
+  -webkit-transform:rotate(10deg);   /* 오른쪽으로 10도 회전 */
+  -moz-transform:rotate(10deg);
+  -o-transform:rotate(10deg);
+  -ms-transform:rotate(10deg);
+  transform:rotate(10deg);
+  }
+</style>
+</head>
+
+<body>
+  <img src="scene2.jpg" id="scene" class="whiteborder">
+</body>
+</html>

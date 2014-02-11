@@ -1,0 +1,48 @@
+﻿
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geolocation</title>    
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<style>
+		label {display:block;}
+	</style>
+  </head>
+  <body>
+		
+		<label for="lat">위도: 
+			<input type="text" id="lat" name="lat">
+		</label>
+    
+		<label for="lng">경도:
+			<input type="text" id="lng" name="lng">
+		</label>
+		
+		<p><a href="" target="_blank" id="map">새 창에서 지도 보기</a></p>
+<script>  
+	if(navigator.geolocation) {	
+		navigator.geolocation.getCurrentPosition(showPosition,errorPosition);  		
+	}
+	else {
+		alert("이 브라우저에서는 지오로케이션 서비스를 사용할 수 없습니다");
+	}
+
+	function showPosition(position)  {
+	
+		var lat = position.coords.latitude;
+		var lng = position.coords.longitude; 
+		
+		document.getElementById('lat').value = lat;
+		document.getElementById('lng').value = lng;
+		
+		var mapAddr = "https://maps.google.com/maps?q="+lat+",+"+lng+"+(My+office)&iwloc=A&hl=ko"; 
+		document.getElementById('map').href = mapAddr;	}
+  
+	function errorPosition(error)
+	{
+		alert(error.message);
+	}	      
+</script>
+</body>
+</html>
