@@ -40,28 +40,28 @@ h4 {
 
 .toc ul {
 	list-style: none;
-	height: 30px;
-	padding-top: 10px;
+	height: 20px;
+	padding-top: 5px;
 	padding-bottom: 5px;
 }
 
 .toc ul li {
 	display: inline;
 	float: left;
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .toc a,.toc a:visited {
-	padding: 10px 5px 5px 35px;
+	padding: 10px 5px 5px 10px;
 	display: block;
 	color: #000000;
 	width: 400px;
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 16px;
 }
 
 .toc a:hover,.toc a:active,.toc a:focus {
-	text-shadow: 0px 2px 2px #000;
+	text-shadow: 0px 2px 2px #555555;
 	color: #ff0000;
 }
 
