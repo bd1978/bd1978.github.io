@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* CSS Document */
+
+header {
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #069;
+	padding: 10px;
+	overflow: hidden;
+}
+header h1{
+	width:40p%;
+	float:left;	
+}
+
+header nav {
+	width:60%;
+	float:right;	
+}
+
+nav ul{
+	list-style-type:none;	
+}
+
+nav ul li{
+	display: inline;
+	float: left;
+	margin: 15px;
+}
+
+
+nav ul li a{
+	color:white;
+	text-decoration:none;	
+}
+
+section{
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	border:5px solid #333;
+	padding:5px;
+}
+
+
+footer{
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;	
+	margin-top:0;
+	padding:10px;
+	background-color:#333;
+	color:white;	
+	text-align:center;
+}

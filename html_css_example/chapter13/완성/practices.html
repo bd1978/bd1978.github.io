@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>향기나는 꽃집</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">      
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>      
+    <![endif]-->
+    <style>
+      body {
+        margin:0;  /* 문서 전체 마진*/
+        padding:0;  /* 문서 전체 패딩 */
+        font-family:"돋움";   /* 문서 전체 글꼴*/
+        font-size:1em; /* 문서 전체 글자 크기 */
+      }
+      a:link {
+        text-decoration:none;  /* 텍스트 링크 밑줄 없앰*/
+      }
+      a img {
+        border:0;   /* 이미지 링크 테두리 없앰*/
+      }
+      body {
+        background:url(background.png) no-repeat left top fixed;   /* 문서 배경 이미지 */
+        background-size:cover ;  /* 배경 이미지 비율 유지하면서 배경 이미지 크기 조절*/
+      }
+
+      #wrapper {
+        margin: 0 auto;   /* 내용 전체를 화면 중앙에 배치 */
+        width: 90%;  /* 내용 부분 너비는 브라우저 너비의 90% */
+        background:white;   /* 내용 부분 배경색 */
+        border: 1px solid #ccc;  /* 테두리 */
+      }
+
+      /* 스마트폰에서 실행할 css */
+        #topbanner {
+        width: 100%;  /* 너비 */
+        height: 155px;   /* 실제 내용이 없으므로 높이 지정해야 */
+        background: url(topbg1.png) no-repeat left top;   /* 사이트 로고 이미지를 배경으로 */
+        background-color: #eee0bb;  /* 배경색 */
+        margin-bottom:0;  /* 마진 */
+      }
+
+      nav {
+        width: 100%;
+        height:50px;
+        background-color: #C51A3A;
+        margin: 0;
+        padding-top:1px;
+      }
+      nav ul {
+        list-style:none;
+        text-align:center;
+      }
+      nav ul li{
+       float:left;
+      }
+      nav ul li a, nav ul li a:visited {
+        padding:15px 10px;   /* 패딩을 이용해 메뉴 항목의 공간 마련*/
+        font-weight: 600;   /* 글자를 약간 진하게  (400:보통, 900: 진함) */
+        color: white;  /* 글자색 */
+        text-shadow:0 0.5px 0.5px red;  /* 글자에 그림자 효과 추가 */
+      }
+      nav li a:hover {
+        color:red;    /* 글자색 */
+        background-color:white;  /* 배경색 */
+        text-shadow:0 0.5px 1px white;  /* 글자에 그림자 효과 추가 */
+        border-radius:10px 10px 0 0;  /* 윗부분만 둥글게 처리 */
+      }
+      #shop {
+		    text-align:center;
+		    width: 100%;
+      }
+        #shop img {
+            width: 100%;
+        }
+      #intro {
+        width:95%;
+        padding:2%;
+      }
+      #intro h3{
+	      font-weight:600;
+	      margin:15px 0;
+      }
+      #intro p {
+	      font-size: 1.2em;
+	      font-weight: 600;
+	      font-family: "바탕";
+	      color: #F30;
+      }
+      hr {
+        clear:both;
+        visibility:hidden;
+      }      
+      #customer {  
+        width:90%;  
+        margin-left:2%;
+        margin-bottom:15px;
+      }
+      #customer h3{
+    	  padding: 10px;  /* 패딩 */
+	      background-color: #E66C6D;  /* 제목의 배경색 */
+	      color: #fff;  /* 제목의 글자색 */
+      }
+      #customer ul{
+	      list-style:square;	/* 불릿을 사각형으로 */
+      }
+      #customer ul li{
+	      font-size:0.9em;   /* 글자 크기 */
+	      line-height:25px;		  /* 줄간격 */
+      }
+      .sub{
+        width:90%;   /* 너비 */
+        height:200px;  /* 높이 */
+        border:1px dotted #2a2399;  /* 1px 점선 */
+        border-radius:10px;  /* 모서리 둥글게 */
+        margin-left:2%;  /* 왼쪽 마진 */
+        margin-bottom:15px;  /* 아래쪽 마진 */
+      }
+       #choice1 {
+	      background:url(bg1.png) no-repeat left bottom;
+	      background-size:contain;  /* 이미지를 기준으로 요소 크기에 맞게 배경 이미지 조절 */
+      }
+      #choice2 {
+	      background:url(bg2.png) no-repeat left bottom;
+	      background-size:contain;
+      }
+      #choice3 {
+	      background:url(bg3.png) no-repeat left bottom;
+	      background-size:contain;
+      }        
+      .sub  hgroup {
+	      width:95%;  /* 너비 */
+	      background-color:rgba(255,255,255,.6);	  /* 불투명도 0.6인 흰색 배경 */
+	      margin-top:120px;	  /* 위쪽 마진 120px */
+	      text-align:right;   /* 제목들을 오른쪽으로 정렬 */
+      }
+      .sub hgroup h3{
+	      color: #936;  /* 글자색 */
+	      font-weight: 600;  /* 약간 진하게 */
+	      font-family: "바탕";  /* 글꼴 */
+	      font-size: 1.5em;  /* 글자 크기 */
+      }
+      .sub hgroup h4{
+	      color: #06F;  /* 글자색 */
+	      font-weight: 600;   /* 약간 진하게 */
+	      font-family: "바탕";  /* 글꼴 */
+	      font-size: 1em;  /* 글자 크기 */
+      }      
+      footer {
+	      width: 100%;  /* 전체 너비 */
+	      height: 50px;  /* 높이 */
+        border-top: 1px solid #ccc;  /* 위쪽에 테두리 */
+      }
+      footer ul {
+	      list-style:none;	/* 불릿 없앰 */
+	      margin:0;  /* 내비게이션에 마진 없앰 */
+      }
+      footer ul li a{
+	      float:left;   /* 항목을 왼쪽부터 배치 */
+	      font-size:0.8em;  /* 글자 크기 */
+	      padding:15px 5px;  /* 패딩 */
+	      color:#222;	 /* 글자색 */
+      }
+      footer p{
+	      float:right;   /* 텍스트 오른쪽 배치 */
+	      text-align:left;   /* 텍스트 왼쪽 정렬 */     
+	      font-size:0.8em;  /* 글자 크기 */
+	      padding-right:5px;  /* 오른쪽 패딩 */
+      }          
+      /* 태블릿에서 실행할 css */
+        @media all and (min-width:768px) and (max-width:1024px) {
+            #topbanner {
+                width: 100%;    /* 너비 */
+                height: 195px;   /* 내용이 없으므로 높이를 지정해야 */
+                background: url(topbg2.png) no-repeat left top;  /* 사이트 배경 이미지 지정 */
+                background-size: auto;   /* 배경 이미지 크기 조절 */
+                background-color: #eee0bb;   /* 배경색 */
+            }
+
+            #customer {
+                width: 45%;   /* 너비 줄임*/
+                margin-left: 2%;  /* 왼쪽 마진 */
+                float: left;  /* 왼쪽부터 배치 */
+            }
+
+            #choice1 {
+                width: 45%;   /* 너비 줄임 */
+                margin-left: 2%;  /* 왼쪽 마진 */
+                float: left;  /* 왼쪽부터 배치 */
+            }
+
+            #choice2 {
+                width: 45%;
+                margin-left: 2%;
+                float: left;
+            }
+
+            #choice3 {
+                width: 45%;
+                margin-left: 2%;
+                float: left;
+            }
+        }  
+      /* pc에서 실행할 css */
+      @media all and (min-width:1025px) {
+        #topbanner {
+          width: 100%;    /* 너비 */
+          height: 195px;   /* 내용이 없으므로 높이 지정*/
+          background: url(topbg3.png) no-repeat left top;   /* 사이트 배경 이미지 지정 */
+          background-size: auto;   /* 배경 이미지 크기 조절 */
+          background-color: #ebdaac;  /* 배경색 */
+        }
+        #shop {    
+          clear:both;
+          float:left;      
+		  width: 40%;
+          margin:1.5%;
+        }	
+        #intro {
+          margin-top:25px;
+          float:left;
+          width: 50%;
+          padding:10px;
+        }
+        #intro > h3{   /* #intro 영역에 있는 자식 요소 <h3>에만 적용 */
+	        font-weight:600;
+	        margin:15px 0;
+        }
+        #intro > p {   /* #intro 영역에 있는 자식 요소 <p>에만 적용 */
+	        font-size: 1.2em;
+	        font-weight: 600;
+	        font-family: "바탕";
+	        color: #F30;
+        }
+        #customer {
+	        width: 23%;   /* 너비 줄임 */
+	        margin-left: 1.7%;      /* 왼쪽 마진 */
+          float:left;  /* 왼쪽부터 배치 */
+        }
+        #choice1 {
+	        width: 23%;
+	        margin-left: 1.7%;
+          float:left;      
+        }
+        #choice2 {
+	        width: 23%;
+	        margin-left: 1.7%;
+          float:left;
+        }
+        #choice3 {
+	        width: 22%;
+	        margin-left: 1.7%;
+          float:left;
+        }            
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header id="topbanner"></header>  <!-- 사이트 로고  -->
+      <nav>      <!-- 사이트 메인 메뉴 -->
+        <ul>
+          <li>
+            <a href="#">꽃다발</a>
+          </li>
+          <li>
+            <a href="#">꽃바구니</a>
+          </li>
+          <li>
+            <a href="#">화환</a>
+          </li>
+          <li>
+            <a href="#">화분</a>
+          </li>
+        </ul>
+      </nav>
+      <div id="shop">       <!-- 꽃집 사진 -->
+        <img src="shop.png"  alt="꽃집 전경">
+      </div>
+      <div id="intro">    <!--  꽃집 소개 -->
+        <h3>향기나는 꽃집입니다</h3>
+        <p>향기나는 꽃집은 식물과 함께하는 건강한 삶, 꽃으로 전하는 사랑이야기, 그리고 꽃으로 힐링하는 치유의 삶의 메신저가 되겠습니다.</p>
+      </div>
+      <hr>
+        <div id="customer">   <!-- 고객 상담 정보 -->
+          <h3> 고객 상담 안내</h3>
+          <ul id="contact">
+            <li>
+              <b>전화</b> 031-858-5277
+            </li>
+            <li>
+              <b>팩스</b> 031-858-5270
+            </li>
+            <li>
+              <b>운영시간</b> 오전9~오후6시 점심:12~1시
+            </li>
+          </ul>
+        </div>
+        <div id="choice1" class="sub">   <!--  추천제품1 -->
+          <hgroup>
+            <h3>꽃다발</h3>
+            <h4>말괄량이</h4>
+          </hgroup>
+        </div>
+        <div id="choice2" class="sub">      <!--  추천제품2 -->
+          <hgroup>
+            <h3> 꽃바구니</h3>
+            <h4>장미 100송이</h4>
+          </hgroup>
+        </div>
+        <div id="choice3" class="sub">      <!--  추천제품3 -->
+          <hgroup>
+            <h3>화환</h3>
+            <h4>근조 화환</h4>
+          </hgroup>
+        </div>
+        <hr>
+          <footer>
+            <ul>
+              <li>
+                <a href="#">홈</a>
+              </li>
+              <li>
+                <a href="#">회사소개</a>
+              </li>
+              <li>
+                <a href="#">이용약관</a>
+              </li>
+              <li>
+                <a href="#">개인정보취급방침</a>
+              </li>
+            </ul>
+            <p>Copyright 2013</p>
+          </footer>
+        </div> 
+  </body>
+</html>
