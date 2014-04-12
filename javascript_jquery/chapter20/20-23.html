@@ -29,7 +29,9 @@
             document.getElementById('get').onclick = function () {
                 // Ajax를 수행합니다.
                 var request = createRequest();
-                request.open('GET', 'http://172.21.110.76:52273/products', false);
+                request.open('GET', 'http://172.21.110.76:52273/products', true);
+                request.setRequestHeader('Access-Control-Allow-Headers', '*');
+                request.setRequestHeader('Access-Control-Allow-Origin', '*');
                 request.send();
 
                 // 출력합니다.
