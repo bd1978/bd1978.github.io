@@ -29,7 +29,7 @@
             document.getElementById('get').onclick = function () {
                 // Ajax를 수행합니다.
                 var request = createRequest();
-                request.open('GET', '/products?dummy=' + new Date().getTime(), false);
+                request.open('GET', 'http://172.21.110.76:52273/products?dummy=' + new Date().getTime(), false);
                 request.send();
 
                 // 출력합니다.
@@ -43,7 +43,7 @@
 
                 // Ajax를 수행합니다.
                 var request = createRequest();
-                request.open('POST', '/products', false);
+                request.open('POST', 'http://172.21.110.76:52273/products', false);
                 request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                 request.send('name=' + name + '&price=' + price);
 

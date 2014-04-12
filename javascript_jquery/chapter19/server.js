@@ -17,8 +17,8 @@ var items = [{
 // 웹 서버를 생성합니다.
 var app = express();
 app.use(express.static('public'));
-app.use(express.bodyParser());
-app.use(app.router);
+//app.use(express.bodyParser());
+//app.use(app.router);
 
 // 라우트합니다.
 app.all('/data.html', function (request, response) {
