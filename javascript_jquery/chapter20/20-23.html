@@ -3,6 +3,31 @@
 <head>
     <title>XMLHttpRequest</title>
     <script>
+    
+       function createCORSRequest(method, url) {
+    	  var xhr = new XMLHttpRequest();
+    	  if ("withCredentials" in xhr) {
+
+    	    // Check if the XMLHttpRequest object has a "withCredentials" property.
+    	    // "withCredentials" only exists on XMLHTTPRequest2 objects.
+    	    xhr.open(method, url, true);
+
+    	  } else if (typeof XDomainRequest != "undefined") {
+
+    	    // Otherwise, check if XDomainRequest.
+    	    // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+    	    xhr = new XDomainRequest();
+    	    xhr.open(method, url);
+
+    	  } else {
+
+    	    // Otherwise, CORS is not supported by the browser.
+    	    xhr = null;
+
+    	  }
+    	  return xhr;
+    	}
+       
         // XMLHttpRequest 객체를 생성하는 함수
         function createRequest() {
             try {
@@ -28,10 +53,7 @@
         window.onload = function () {
             document.getElementById('get').onclick = function () {
                 // Ajax를 수행합니다.
-                var request = createRequest();
-                request.open('GET', 'http://172.21.110.76:52273/products', true);
-                request.setRequestHeader('Access-Control-Allow-Headers', '*');
-                request.setRequestHeader('Access-Control-Allow-Origin', 'http://172.21.110.76:52273');
+                var request = createCORSRequest('GET', 'http://172.21.110.76:52273/products');
                 request.send();
 
                 // 출력합니다.
