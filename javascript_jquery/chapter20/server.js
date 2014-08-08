@@ -1,6 +1,6 @@
 ﻿// 모듈을 추출합니다.
-var http = require('http');
 var express = require('express');
+var bodyParser = require('body-parser');
 
 // 변수를 선언합니다.
 var items = [{
@@ -17,11 +17,12 @@ var items = [{
 // 웹 서버를 생성합니다.
 var app = express();
 app.use(express.static('public'));
-//app.use(express.bodyParser());
-//app.use(app.router);
+app.use(bodyParser());
+
+var router = express.Router();
 
 // 라우트합니다.
-app.all('/data.html', function (request, response) {
+router.all('/data.html', function (request, response) {
     var output = '';
     output += '<!DOCTYPE html>';
     output += '<html>';
@@ -40,11 +41,11 @@ app.all('/data.html', function (request, response) {
     response.send(output);
 });
 
-app.all('/data.json', function (request, response) {
+router.all('/data.json', function (request, response) {
     response.send(items);
 });
 
-app.all('/data.xml', function (request, response) {
+router.all('/data.xml', function (request, response) {
     var output = '';
     output += '<?xml version="1.0" encoding="UTF-8" ?>';
     output += '<products>';
@@ -59,7 +60,7 @@ app.all('/data.xml', function (request, response) {
     response.send(output);
 });
 
-app.all('/parameter', function (request, response) {
+router.all('/parameter', function (request, response) {
     // 변수를 선언합니다.
     var name = request.param('name');
     var region = request.param('region');
@@ -68,7 +69,7 @@ app.all('/parameter', function (request, response) {
     response.send('<h1>' + name + ':' + region + '</h1>');
 });
 
-app.all('/parameter/:id', function (request, response) {
+router.all('/parameter/:id', function (request, response) {
     // 변수를 선언합니다.
     var id = request.param('id');
 
@@ -76,11 +77,11 @@ app.all('/parameter/:id', function (request, response) {
     response.send('<h1>' + id + '</h1>');
 });
 
-app.get('/products', function (request, response) {
+router.get('/products', function (request, response) {
     response.send(items);
 });
 
-app.get('/products/:id', function (request, response) {
+router.get('/products/:id', function (request, response) {
     // 변수를 선언합니다.
     var id = Number(request.param('id'));
 
@@ -100,7 +101,7 @@ app.get('/products/:id', function (request, response) {
     }
 });
 
-app.post('/products', function (request, response) {
+router.post('/products', function (request, response) {
     // 변수를 선언합니다.
     var name = request.param('name');
     var price = request.param('price');
@@ -119,7 +120,7 @@ app.post('/products', function (request, response) {
     });
 });
 
-app.put('/products/:id', function (request, response) {
+router.put('/products/:id', function (request, response) {
     // 변수를 선언합니다.
     var id = Number(request.param('id'));
     var name = request.param('name');
@@ -143,7 +144,7 @@ app.put('/products/:id', function (request, response) {
     }
 });
 
-app.del('/products/:id', function (request, response) {
+router.delete('/products/:id', function (request, response) {
     // 변수를 선언합니다.
     var id = Number(request.param('id'));
 
@@ -166,7 +167,7 @@ app.del('/products/:id', function (request, response) {
     }
 });
 
+app.use('/api', router);
+
 // 웹 서버를 실행합니다.
-http.createServer(app).listen(52273, function () {
-    console.log('Server Running at http://127.0.0.1:52273');
-});
+app.listen(52273);

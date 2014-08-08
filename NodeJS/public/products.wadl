@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application xmlns="http://wadl.dev.java.net/2009/02">
+    <doc title="REST API test 01"/>
+    <resources base="http://172.21.110.76:8000/api">
+        <resource queryType="application/x-www-form-urlencoded" path="products">
+            <method id="getProducts" name="GET"/>
+            <method id="addProduct" name="POST">
+                <request>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="name" style="query" type="string" default="맥주" required="true"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="price" style="query" type="string" default="7000" required="true"/>
+                </request>
+            </method>
+            <resource queryType="application/x-www-form-urlencoded" path="3">
+                <method id="modifyProduct" name="PUT">
+                    <request>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="name" style="query" type="string" default="맥주" required="false"/>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="price" style="query" type="string" default="6000" required="false"/>
+                    </request>
+                </method>
+                <method id="deleteProduct" name="DELETE"/>
+            </resource>
+        </resource>
+    </resources>
+</application>
