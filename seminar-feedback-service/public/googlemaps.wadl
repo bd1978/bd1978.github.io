@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application xmlns="http://wadl.dev.java.net/2009/02">
+    <doc title="Google Map APIs" xml:lang="en">
+        Google Map APIs
+      </doc>
+    <grammars/>
+    <resources base="http://maps.googleapis.com/maps/api/geocode">
+        <resource path="xml">
+            <doc title="Google Geocoding API wit xml response" xml:lang="en">
+        XML response format.
+      </doc>
+            <method href="#search"/>
+        </resource>
+        <resource path="json">
+            <doc title="Google Geocoding API wit json response" xml:lang="en">
+        JSON response format.
+      </doc>
+            <method href="#search"/>
+        </resource>
+    </resources>
+    <method id="search" name="GET">
+        <doc title="Get geocoding information" xml:lang="en"/>
+        <request>
+            <param name="address" style="query" default="bundang" required="true">
+                <doc title="The address that you want to geocode." xml:lang="en"/>
+            </param>
+            <param name="sensor" style="query" default="false">
+                <doc title="Indicates whether or not the geocoding request comes from a device with a location sensor. This value must be either true or false." xml:lang="en"/>
+            </param>
+            <param name="language" style="query" default="en">
+                <doc title="The language in which to return results. " xml:lang="en"/>
+            </param>
+        </request>
+        <response/>
+    </method>
+</application>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application xmlns="http://wadl.dev.java.net/2009/02">
+    <doc title="Seminar feedback service"/>
+    <resources base="http://{host_local}/api">
+        <doc/>
+        <doc/>
+        <resource queryType="application/x-www-form-urlencoded" path="admin">
+            <resource queryType="application/x-www-form-urlencoded" path="exist">
+                <method id="admin check" name="GET">
+                    <request>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="adminName" style="query" type="string" default="${adminName}" required="true"/>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="adminPassword" style="query" type="string" default="${adminPassword}" required="true"/>
+                    </request>
+                </method>
+            </resource>
+        </resource>
+        <resource queryType="application/x-www-form-urlencoded" path="users">
+            <method id="get user list" name="GET">
+                <request>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="adminName" style="query" type="string" default="${adminName}" required="true"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="adminPassword" style="query" type="string" default="${adminPassword}" required="true"/>
+                </request>
+            </method>
+            <resource queryType="application/x-www-form-urlencoded" path="{id}">
+                <method id="get user details" name="GET">
+                    <request>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="id" style="template" type="number" default="${userId}" required="true"/>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="adminName" style="query" type="string" default="${adminName}" required="true"/>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="adminPassword" style="query" type="string" default="${adminPassword}" required="true"/>
+                    </request>
+                </method>
+                <method id="delete user" name="DELETE">
+                    <request>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="id" style="template" type="number" default="${addedUserId}" required="true"/>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="adminName" style="query" type="string" default="${adminName}" required="true"/>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="adminPassword" style="query" type="string" default="${adminPassword}" required="true"/>
+                    </request>
+                </method>
+            </resource>
+            <method id="add user" name="POST">
+                <request>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="adminName" style="query" type="string" default="${adminName}" required="true"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="adminPassword" style="query" type="string" default="${adminPassword}" required="true"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="name" style="query" type="string" default="${addedUserName}" required="true"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="password" style="query" type="string" default="${addedUserPassword}" required="true"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="userId" style="query" type="number" default="${addedUserId}" required="false"/>
+                </request>
+            </method>
+        </resource>
+        <resource queryType="application/x-www-form-urlencoded" path="seminars">
+            <method id="get seminar list" name="GET">
+                <request>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="month" style="query" type="number" default="" required="false"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="name" style="query" type="string" default="" required="false"/>
+                </request>
+            </method>
+            <resource queryType="application/x-www-form-urlencoded" path="{id}">
+                <method id="get seminar details" name="GET">
+                    <request>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="id" style="template" type="number" default="${seminarId}" required="true"/>
+                    </request>
+                </method>
+                <method id="modify seminar" name="PUT">
+                    <request>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="name" style="query" type="string" default="${userName}" required="true"/>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="password" style="query" type="string" default="${userPassword}" required="true"/>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="date" style="query" type="number" default="" required="false"/>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="title" style="query" type="string" default="[수정] ${seminarTitle}" required="true"/>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="contents" style="query" type="string" default="${seminarContents}" required="false"/>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="link" style="query" type="string" default="${seminarLink}" required="false"/>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="id" style="template" type="number" default="${addedSeminarId}" required="false"/>
+                    </request>
+                </method>
+                <method id="delete seminar" name="DELETE">
+                    <request>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="id" style="template" type="number" default="${addedSeminarId}" required="true"/>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="name" style="query" type="string" default="${userName}" required="true"/>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="password" style="query" type="string" default="${userPassword}" required="true"/>
+                    </request>
+                </method>
+            </resource>
+            <method id="add seminar" name="POST">
+                <request>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="name" style="query" type="string" default="${userName}" required="true"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="password" style="query" type="string" default="${userPassword}" required="true"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="date" style="query" type="number" default="" required="false"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="title" style="query" type="string" default="${seminarTitle}" required="true"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="contents" style="query" type="string" default="${seminarContents}" required="false"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="link" style="query" type="string" default="${seminarLink}" required="false"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="seminarId" style="query" type="number" default="${addedSeminarId}" required="false"/>
+                </request>
+            </method>
+        </resource>
+        <resource queryType="application/x-www-form-urlencoded" path="feedbacks">
+            <method id="get feedback list" name="GET">
+                <request>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="seminarId" style="query" type="number" default="${seminarId}" required="true"/>
+                </request>
+            </method>
+            <method id="add feedback" name="POST">
+                <request>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="seminarId" style="query" type="number" default="${seminarId}" required="true"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="name" style="query" type="string" default="${userName}" required="true"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="password" style="query" type="string" default="${userPassword}" required="true"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="date" style="query" type="number" default="" required="false"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="score1" style="query" type="number" default="${score1}" required="true"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="score2" style="query" type="number" default="${score2}" required="true"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="score3" style="query" type="number" default="${score3}" required="true"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="score4" style="query" type="number" default="${score4}" required="true"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="score5" style="query" type="number" default="${score5}" required="true"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="feedback" style="query" type="string" default="${feedback}" required="false"/>
+                    <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="feedbackId" style="query" type="number" default="${addedFeedbackId}" required="false"/>
+                </request>
+            </method>
+            <resource queryType="application/x-www-form-urlencoded" path="{id}">
+                <method id="delete feedback" name="DELETE">
+                    <request>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="id" style="template" type="number" default="${addedFeedbackId}" required="true"/>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="adminName" style="query" type="string" default="${adminName}" required="true"/>
+                        <ns2:param xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" name="adminPassword" style="query" type="string" default="${adminPassword}" required="true"/>
+                    </request>
+                </method>
+            </resource>
+        </resource>
+    </resources>
+</application>
