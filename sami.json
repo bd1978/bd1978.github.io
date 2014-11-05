@@ -1,0 +1,855 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "SAMI API v1.0.0"
+  },
+  "host": "api.samihub.com",
+  "basePath": "/v1.1",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/devices": {
+      "post": {
+        "description": "Create a device",
+        "operationId": "addDevice",
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/devices/{deviceId}": {
+      "get": {
+        "description": "Retrieves a device",
+        "operationId": "getDevice",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deviceId",
+            "description": "deviceId",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      },
+      "put": {
+        "description": "Updates a device",
+        "operationId": "updateDevice",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deviceId",
+            "description": "deviceId",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      },
+      "delete": {
+        "description": "Deletes a device",
+        "operationId": "deleteDevice",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deviceId",
+            "description": "deviceId",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/devices/{deviceId}/tokens": {
+      "get": {
+        "description": "Retrieves a device's token",
+        "operationId": "getDeviceToken",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deviceId",
+            "description": "deviceId",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      },
+      "put": {
+        "description": "Updates a device's token",
+        "operationId": "updateDeviceToken",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deviceId",
+            "description": "deviceId",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      },
+      "delete": {
+        "description": "Deletes a device's token",
+        "operationId": "deleteDeviceToken",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deviceId",
+            "description": "deviceId",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/devicetypes": {
+      "get": {
+        "description": "Retrieves Device Types",
+        "operationId": "getDeviceTypes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "description": "Device Type name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "Offset for pagination.",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "count",
+            "description": "Desired count of items in the result set",
+            "type": "integer",
+            "required": false
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/devicetypes/{deviceTypeId}": {
+      "get": {
+        "description": "Retrieves a Device Type",
+        "operationId": "getDeviceType",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deviceTypeId",
+            "description": "deviceTypeId",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/devicetypes/{deviceTypeId}/availablemanifestversions": {
+      "get": {
+        "description": "Get a Device Type's available manifest versions",
+        "operationId": "getAvailableManifestVersions",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deviceTypeId",
+            "description": "deviceTypeId",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/devicetypes/{deviceTypeId}/manifests/latest/properties": {
+      "get": {
+        "description": "Get a Device Type's manifest properties for the latest version.",
+        "operationId": "getLatestManifestProperties",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deviceTypeId",
+            "description": "Device Type ID.",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/devicetypes/{deviceTypeId}/manifests/{version}/properties": {
+      "get": {
+        "description": "Get a Device Type's manifest properties for a specific version.",
+        "operationId": "getManifestProperties",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "deviceTypeId",
+            "description": "Device Type ID.",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "version",
+            "description": "Manifest Version.",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/messages/raw": {
+      "get": {
+        "description": "Get Raw messages",
+        "operationId": "getRawMessages",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sdid",
+            "description": "Source device ID of the messages being searched.",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "mid",
+            "description": "The SAMI message ID being searched.",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "A string that represents the starting item, should be the value of 'next' field received in the last response. (required for pagination)",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "count",
+            "description": "count",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "startDate",
+            "description": "startDate",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "endDate",
+            "description": "endDate",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "description": "Desired sort order: 'asc' or 'desc'",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/messages": {
+      "get": {
+        "description": "Get the messages normalized",
+        "operationId": "getNormalizedMessages",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "uid",
+            "description": "User ID. If not specified, assume that of the current authenticated user. If specified, it must be that of a user for which the current authenticated user has read access to.",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "sdid",
+            "description": "Source device ID of the messages being searched.",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "mid",
+            "description": "The SAMI message ID being searched.",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "fieldPresence",
+            "description": "String representing a field from the specified device ID.",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "description": "Filter.",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "A string that represents the starting item, should be the value of 'next' field received in the last response. (required for pagination)",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "count",
+            "description": "count",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "startDate",
+            "description": "startDate",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "endDate",
+            "description": "endDate",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "description": "Desired sort order: 'asc' or 'desc'",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      },
+      "post": {
+        "description": "Posts a message",
+        "operationId": "postMessage",
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/messages/analytics/aggregates": {
+      "get": {
+        "description": "Get aggregates on normalized messages.",
+        "operationId": "getMessageAggregates",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sdid",
+            "description": "Source device ID of the messages being searched.",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "field",
+            "description": "String representing a field from the specified device ID.",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "startDate",
+            "description": "startDate",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "endDate",
+            "description": "endDate",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/messages/last": {
+      "get": {
+        "description": "Get last messages normalized.",
+        "operationId": "getLastNormalizedMessages",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "count",
+            "description": "Number of items to return per query.",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "sdids",
+            "description": "Comma separated list of source device IDs (minimum: 1).",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "field",
+            "description": "String representing a field from the specified device ID.",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/messages/presence": {
+      "get": {
+        "description": "Get normalized message presence.",
+        "operationId": "getFieldPresence",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sdid",
+            "description": "Source device ID of the messages being searched.",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "fieldPresence",
+            "description": "String representing a field from the specified device ID.",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "startDate",
+            "description": "startDate",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "endDate",
+            "description": "endDate",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "interval",
+            "description": "String representing grouping interval. One of: 'minute' (1 hour limit), 'hour' (1 day limit), 'day' (31 days limit), 'month' (1 year limit), or 'year' (10 years limit).",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/messages/export": {
+      "get": {
+        "description": "Get the messages normalized",
+        "operationId": "exportNormalizedMessages",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "uid",
+            "description": "User ID. If not specified, assume that of the current authenticated user. If specified, it must be that of a user for which the current authenticated user has read access to.",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "sdid",
+            "description": "Source device ID of the messages being searched.",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "mid",
+            "description": "The SAMI message ID being searched.",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "fieldPresence",
+            "description": "String representing a field from the specified device ID.",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "description": "Filter.",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "A string that represents the starting item, should be the value of 'next' field received in the last response. (required for pagination)",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "startDate",
+            "description": "startDate",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "endDate",
+            "description": "endDate",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "description": "Desired sort order: 'asc' or 'desc'",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "format",
+            "description": "Format the export will be returned as.",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/messages/export/{exportId}/status": {
+      "get": {
+        "description": "Check status of the export query.",
+        "operationId": "checkExportStatus",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "exportId",
+            "description": "The Export ID of the export query.",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/users/self": {
+      "get": {
+        "description": "Get's the current user's profile",
+        "operationId": "self",
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/users/{userId}": {
+      "put": {
+        "description": "Update a user profile.",
+        "operationId": "updateUser",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "description": "User Id",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/users/{userId}/properties": {
+      "get": {
+        "description": "Get application properties of a user",
+        "operationId": "getUserProperties",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "description": "User Id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "aid",
+            "description": "Application ID",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      },
+      "post": {
+        "description": "Create application properties for a user",
+        "operationId": "createUserProperties",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "description": "User Id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "aid",
+            "description": "Application ID",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      },
+      "put": {
+        "description": "Updates application properties of a user",
+        "operationId": "updateUserProperties",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "description": "User Id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "aid",
+            "description": "Application ID",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      },
+      "delete": {
+        "description": "Deletes a users properties",
+        "operationId": "deleteUserProperties",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "description": "User Id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "aid",
+            "description": "Application ID",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/users/{userId}/devices": {
+      "get": {
+        "description": "Retrieve User's Devices",
+        "operationId": "getUserDevices",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "Offset for pagination.",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "count",
+            "description": "Desired count of items in the result set",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "includeProperties",
+            "description": "Optional. Boolean (true/false) - If false, only return the user's device types. If true, also return device types shared by other users.",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "in": "path",
+            "name": "userId",
+            "description": "User ID",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/users/{userId}/devicetypes": {
+      "get": {
+        "description": "Retrieve User's Device Types",
+        "operationId": "getUserDeviceTypes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "Offset for pagination.",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "count",
+            "description": "Desired count of items in the result set",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "includeShared",
+            "description": "Optional. Boolean (true/false) - If false, only return the user's device types. If true, also return device types shared by other users.",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "in": "path",
+            "name": "userId",
+            "description": "User ID.",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "success"
+          }
+        }
+      }
+    }
+  },
+  "produces": [
+    "application/json"
+  ]
+}
