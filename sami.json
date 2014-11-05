@@ -1,7 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "SAMI API v1.0.0"
+    "title": "SAMI API v1.0.0",
+    "version": "1.0.0"
   },
   "host": "api.samihub.com",
   "basePath": "/v1.1",
